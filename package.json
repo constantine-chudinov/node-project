@@ -1,0 +1,33 @@
+{
+  "name": "node-project",
+  "version": "0.0.1",
+  "description": "Experiments with node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/constantine-chudinov/node-project.git"
+  },
+  "author": "Konstantin Chudinov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/constantine-chudinov/node-project/issues"
+  },
+  "homepage": "https://github.com/constantine-chudinov/node-project#readme",
+  "dependencies": {
+    "co-busboy": "^1.4.0",
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-favicon": "^2.0.0",
+    "koa-generic-session": "^2.0.1",
+    "koa-logger": "^3.1.0",
+    "koa-mount": "^3.0.0",
+    "koa-router": "^7.3.0",
+    "koa-static": "^4.0.2",
+    "lodash": "^4.17.4",
+    "mongoose": "^5.0.1"
+  }
+}
