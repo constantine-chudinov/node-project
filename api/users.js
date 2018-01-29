@@ -59,3 +59,4 @@ exports.userById = async (id, ctx, next) => {
 exports.getById = async (ctx) => {
     ctx.body = ctx.userById.toObject();
 };
+
