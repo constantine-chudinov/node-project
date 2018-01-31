@@ -19,7 +19,6 @@ userSchema.statics.publicFields = ["username", "firstName", "lastName", "email"]
 
 userSchema.virtual("password")
     .set(function(password) {
-
         if (password !== undefined) {
             if (password.length < 4) {
                 this.invalidate("password", "Пароль должен быть минимум 4 символа.");

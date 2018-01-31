@@ -1,4 +1,5 @@
-module.exports = { secret: "332fdssd",
+module.exports = {
+    secret: "332fdssd",
     crypto: {
         hash: {
             length: 128,

@@ -4,6 +4,7 @@ const User = require("../mongodb/users");
 
 exports.get = async (ctx) => {
     try {
+        console.log("------")
         ctx.body = await User.find({});
     } catch (ex) {
         ctx.throw(500, "Internal server error");

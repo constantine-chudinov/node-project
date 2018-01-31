@@ -4,6 +4,7 @@ const User = require("../mongodb/users");
 const usersApi = require("./users");
 const jwt = require("jwt-simple");
 const config = require("../config");
+const passport = require('koa-passport');
 
 const tokenForUser = (user) => {
     const timestamp = new Date().getTime();
@@ -21,14 +22,32 @@ module.exports.signup = async (ctx) => {
         ctx.throw(422, "Duplicate user");
     } else {
         const createdUser = await User.create(userToCreate);
-        ctx.body = { token: tokenForUser(createdUser) };
+        const payload = {
+            id: createdUser._id,
+            firstName: createdUser.firstName
+        };
+        ctx.body = { token: jwt.encode(payload, config.secret) };
     }
 };
 
-module.exports.login = async (ctx) => {
-    console.log(ctx);
-    return Promise.resolve("foo");
+module.exports.signin = async function(ctx, next) {
+    await passport.authenticate('local', { session: false })(ctx, next);
+
+    if (ctx.state.user) {
+        const payload = {
+            id: ctx.state.user._id,
+            firstName: ctx.state.user.firstName
+        };
+
+        const token = jwt.encode(payload, config.secret);
+
+        ctx.body = {token};
+    } else {
+        ctx.status = 400;
+        ctx.body = {error: "Invalid credentials"};
+    }
 };
+
 
 module.exports.logout = async (ctx) => {
     console.log(ctx);
