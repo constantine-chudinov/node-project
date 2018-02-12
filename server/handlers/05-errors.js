@@ -7,7 +7,7 @@ exports.init = async app => app.use(async (ctx, next) => {
             ctx.body = e.message;
             ctx.status = e.status;
         } else {
-            ctx.body = 'Error 500';
+            ctx.body = "Error 500";
             ctx.status = 500;
             console.error(e.message, e.stack);
         }

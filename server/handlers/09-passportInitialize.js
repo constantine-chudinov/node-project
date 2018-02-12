@@ -1,4 +1,4 @@
-const passport = require("../passport");
+const passport = require("../server/passport");
 
 // - инициализовать ctx.req._passport (вспомогательный контекст, нам не понадобится)
 // - сделать на ctx методы

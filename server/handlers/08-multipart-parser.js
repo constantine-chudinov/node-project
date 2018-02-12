@@ -4,14 +4,14 @@
 // for routes which require custom file handling
 // can introduce config to ignore them here
 
-const busboy = require('co-busboy');
-const convert = require('koa-convert');
+const busboy = require("co-busboy");
+const convert = require("koa-convert");
 
 // convert function* (next) => async function(ctx, next)
 // ctx => this, next => next
 exports.init = async app => app.use(convert(function* (next) {
-    // the body isn't multipart, so busboy can't parse it
-    if (!this.request.is('multipart/*')) {
+    // the body isn"t multipart, so busboy can"t parse it
+    if (!this.request.is("multipart/*")) {
         return yield* next;
     }
 
