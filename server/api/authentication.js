@@ -3,7 +3,7 @@ const pick = require("lodash/pick");
 const User = require("../mongodb/users");
 const usersApi = require("./users");
 const jwt = require("jwt-simple");
-const config = require("../server/config");
+const config = require("../config");
 const passport = require('koa-passport');
 
 const tokenForUser = (user) => {

@@ -16,4 +16,4 @@ mongoose.connect("mongodb://localhost/test", {
 });
 
 app.use(mount("/v1", router.middleware()));
-if (!module.parent) app.listen(3000);
+if (!module.parent) app.listen(8080);
