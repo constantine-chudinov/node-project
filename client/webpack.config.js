@@ -10,8 +10,8 @@ const BUILD_DIR = path.resolve(__dirname, "build");
 const config = {
     entry: {
         bundle: "./src/index.js",
-        vendor: ["react", "react-dom"],
-        tether: "tether",
+        vendor: ["react", "react-dom", "tether", "axios", "autoprefixer", "bootstrap",
+            "popper.js", "jquery", "react-transition-group", "redux", "react-redux", "redux-thunk", "react-router-redux"],
         "font-awesome": "font-awesome/scss/font-awesome.scss"
     },
     output: {
